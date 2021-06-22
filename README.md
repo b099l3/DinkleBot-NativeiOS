@@ -1,5 +1,5 @@
 <p align="center">
-    <img width="900px" src="header.jpg">
+    <img width="900px" src="artwork/header.jpg">
 </p>
 
 
@@ -15,6 +15,14 @@ Dinklebot is a companion app for [Destiny 2](https://www.bungie.net/7/en/Destiny
 
 
 ## Learning Topics
+
+<p align="center">
+    <video width="900px">
+    <source src="Artwork/tyrion-wiseman-once-said.webm" type="video/webm">
+Your browser does not support the video tag.
+    </video>
+</p>
+
 - [x] Use coordinator pattern
 - [ ] Use MVVM
 - [ ] Use [Realm](https://github.com/realm/realm-cocoa)
@@ -28,8 +36,9 @@ Dinklebot is a companion app for [Destiny 2](https://www.bungie.net/7/en/Destiny
 
 ## Features
 
+### Version 1.0
+
 - [ ] Show the current mods available at Banshee 44 and Ada 1 for today
-- [ ] Show if the current player has these mods
 - [ ] Show if the current player has these mods
 
 ## Why the Name
