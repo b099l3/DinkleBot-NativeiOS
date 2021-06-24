@@ -33,6 +33,9 @@ Your browser does not support the video tag.
 - [ ] XCUITests
 - [ ] Add [SwiftLint](https://github.com/realm/swiftlint) or [swift-format](https://github.com/apple/swift-format)
 
+Others
+
+- [ ] Use [Apollo](https://www.apollographql.com/)
 
 ## Features
 
