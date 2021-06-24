@@ -1,5 +1,5 @@
 <p align="center">
-    <img width="900px" src="artwork/header.jpg">
+    <img width="900px" src="Artwork/header.jpg">
 </p>
 
 
@@ -7,40 +7,50 @@
 
 # DinkleBot
 
-Dinklebot is a companion app for [Destiny 2](https://www.bungie.net/7/en/Destiny/BeyondLight). I plan to use learn about modern swift patterns
+Dinklebot is a companion app for [Destiny 2](https://www.bungie.net/7/en/Destiny/BeyondLight). 
+
+I plan to use this project to learn about modern swift patterns, test out new frameworks/libraries and maintain a knowledge base.
 
 - [Learning Topics](#learning-topics)
 - [Features](#features)
-- [Why the Name](#way-the-name)
+- [Why the Name](#why-the-name)
 
 
 ## Learning Topics
 
 <p align="center">
-    <video width="900px">
-    <source src="Artwork/tyrion-wiseman-once-said.webm" type="video/webm">
-Your browser does not support the video tag.
-    </video>
+    <img width="900px" src="Artwork/tyrion-wiseman-once-said.gif">
 </p>
 
-- [x] Use coordinator pattern
-- [ ] Use MVVM
-- [ ] Use [Realm](https://github.com/realm/realm-cocoa)
-- [ ] Use [Alamorfire](https://github.com/Alamofire/Alamofire)
-- [ ] Unit Tests
-- [ ] Integration Tests
-- [ ] Snapshot Tests
-- [ ] XCUITests
-- [ ] Add [SwiftLint](https://github.com/realm/swiftlint) or [swift-format](https://github.com/apple/swift-format)
+#### Architecture
+  - [ ] Coordinator pattern
+  - [ ] Data patterns: MVVM or VIPER
+  - [ ] Use a Reactive pattern, RxSwift or Combine
+#### Persited Storage
+  - [ ] [Realm](https://github.com/realm/realm-cocoa)
+  - [ ] Core Data
+#### API 
+  - [ ] [Alamorfire](https://github.com/Alamofire/Alamofire)
+  - [ ] [Apollo](https://www.apollographql.com/) 
+#### Tests
+  - [ ] Unit Tests
+  - [ ] Integration Tests
+  - [ ] Snapshot Tests
+  - [ ] XCUITests
+#### Misc
+##### Linting
+  - [ ] Add [SwiftLint](https://github.com/realm/swiftlint) or [swift-format](https://github.com/apple/swift-format)
+##### CI/CD
+  - [ ] GitHub Actions
+  - [ ] FastLane deployment to app store
 
-Others
-
-- [ ] Use [Apollo](https://www.apollographql.com/)
 
 ## Features
 
 ### Version 1.0
 
+- [ ] Have a good architecture that I can easily extend for other features/changes
+- [ ] Integrate with the Bungie.net API
 - [ ] Show the current mods available at Banshee 44 and Ada 1 for today
 - [ ] Show if the current player has these mods
 
