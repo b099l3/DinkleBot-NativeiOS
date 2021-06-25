@@ -23,9 +23,9 @@ I plan to use this project to learn about modern swift patterns, test out new fr
 </p>
 
 #### Architecture
-  - [ ] Coordinator pattern
-  - [ ] Data patterns: MVVM or VIPER
-  - [ ] Use a Reactive pattern, RxSwift or Combine
+  - [ ] [Coordinator pattern](https://github.com/b099l3/DinkleBot/issues/1)
+  - [ ] [Data patterns: MVVM or VIPER](https://github.com/b099l3/DinkleBot/issues/2)
+  - [ ] [Reactive pattern, RxSwift or Combine](https://github.com/b099l3/DinkleBot/issues/3)
 #### Persited Storage
   - [ ] [Realm](https://github.com/realm/realm-cocoa)
   - [ ] Core Data
