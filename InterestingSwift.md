@@ -1,7 +1,44 @@
 # Intresting Swift
-These are notes of interesting syntax or tips I have noted while using swift; if in doubt look [here](https://docs.swift.org/swift-book/)
+These are notes of interesting syntax or tips I have noted while using swift; if in doubt look at the [swift book](https://docs.swift.org/swift-book/) or [Hackign with swift](https://www.hackingwithswift.com/)
+
+- [Intresting Swift](#intresting-swift)
+  * [Syntax](#syntax)
+    + [Closures](#closures)
+    + [Protocol Composition Type](#protocol-composition-type)
+    + [Dot operator](#dot-operator)
+    + [Switch cases](#switch-cases)
+    + [Method signature](#method-signature)
+    + [Function types](#function-types)
+  * [Keywords](#keywords)
+    + [typealias](#typealias)
+    + [associatedtype](#associatedtype)
+    + [fileprivate](#fileprivate)
+    + [fileprivate(set)](#fileprivate-set-)
+    + [let vs var](#let-vs-var)
+    + [guard](#guard)
+    + [@objc](#-objc)
+    + [in (closures)](#in--closures-)
+    + [weak vs unowned](#weak-vs-unowned)
+  * [Operators](#operators)
+    + [The as! and as? Operators](#the-as--and-as--operators)
+  * [Patterns](#patterns)
+    + [Box](#box)
+  * [Questions](#questions)
+    + [Why extend a class to implement a protocol?](#why-extend-a-class-to-implement-a-protocol-)
+      - [Answer](#answer)
 
 ## Syntax
+### Closures
+```swift
+{ [CAPTURE_LIST] (PARAMETERS_LIST) -> RETURN_TYPE in
+    STATEMENTS
+}
+```
+
+The capture list in the square brackets makes immutable copies of the parameter
+
+[Alternative closures syntax](http://www.apeth.com/swiftBook/ch02.html#_anonymous_functions)
+
 ### Protocol Composition Type
 A protocol composition type defines a type that conforms to each protocol in a list of specified protocols, or a type that’s a subclass of a given class and conforms to each protocol in a list of specified protocols.
 
@@ -105,6 +142,27 @@ Function Types as Return Types
 typealias NAME = EXISITNG_TYPE
 ```
 
+### associatedtype
+Associated types are a powerful way of making protocols generic, [see here](https://www.hackingwithswift.com/example-code/language/what-is-a-protocol-associated-type)
+```swift
+protocol ItemStoring {
+    associatedtype DataType
+
+    var items: [DataType] { get set}
+    mutating func add(item: DataType)
+}
+
+extension ItemStoring {
+    mutating func add(item: DataType) {
+        items.append(item)
+    }
+}
+
+struct NameDatabase: ItemStoring {
+    var items = [String]()
+}
+```
+
 ### fileprivate
 
 Used for private access within the file itself
@@ -134,16 +192,39 @@ final class ApplicationCoordinator: BaseCoordinator {
 }
 ```
 
-here we can access the enum LauncherInstructor from within Application coordinator
+here we can access the enum LauncherInstructor from within the Application coordinator
 
 ### fileprivate(set)
- Similar to [fileprivate](#fileprivate) but instead the getter of this property is visible to any file but he setter is only visible to the classes contained within the file.
+ Similar to [fileprivate](#fileprivate) but instead the getter of this property is visible to any file but the setter is only visible to the classes contained within the file.
 
 ### let vs var
 You declare constants with the `let` keyword and variables with the `var` keyword
 
 ### guard
 A guard statement, like an if statement, executes statements depending on the Boolean value of an expression. You use a guard statement to require that a condition must be true in order for the code after the guard statement to be executed, see [here](https://docs.swift.org/swift-book/LanguageGuide/ControlFlow.html#ID525)
+
+### @objc
+By default Swift generates code that is only available to other Swift code, but if you need to interact with the Objective-C runtime – all of UIKit, for example – you need to tell Swift what to do.
+
+### in (closures)
+Used to declare closure using this format:
+```swift
+{ (parameters) -> return type in
+    statements
+}
+```
+example:
+```swift
+reversedNames = names.sorted(by: { (s1: String, s2: String) -> Bool in
+    return s1 > s2
+})
+```
+
+### weak vs unowned
+[Weak self and unowned self explained in Swift](https://www.avanderlee.com/swift/weak-self/)
+> Use a weak reference whenever it is valid for that reference to become nil at some point during its lifetime. Conversely, use an unowned reference when you know that the reference will never be nil once it has been set during initialization.
+
+The only benefit of using unowned over weak is that you don’t have to deal with optionals. Therefore, using weak is always safer in those scenarios.
 
 ## Operators
 ### The as! and as? Operators
@@ -193,3 +274,12 @@ It may be easiest to remember the pattern for these operators in Swift as: ! imp
 ## Patterns
 ### Box
 [How to share structs using boxing](https://www.hackingwithswift.com/articles/92/how-to-share-structs-using-boxing)
+
+
+## Questions
+### Why extend a class to implement a protocol?
+I have seen this pattern a lot where there is a protocol then an extension method in the same class... why?
+
+#### Answer
+This appears to be a pattern called "Protocol Oriented Programming" see [here for further info](https://www.hackingwithswift.com/sixty/9/5/protocol-oriented-programming). 
+This pattern give a deafult implementation for the protocol.
