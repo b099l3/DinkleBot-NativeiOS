@@ -1,0 +1,56 @@
+name: Learning topic
+description: A template for learning topics
+title: "Learning Topic: "
+labels: [learning]
+assignees:
+  - b099l3
+body:
+  - type: input
+    id: topic
+    attributes:
+      label: Learning Topic
+      description: What is the topic?
+      placeholder: MVVM, Alamofire, Realm, etc
+    validations:
+      required: false
+  - type: textarea
+    id: why
+    attributes:
+      label: Why?
+      description: Why is this topic important, what does it ?
+      placeholder: This topic has these advantage ... or these problems 
+      value: "Pros:"
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Additional information or questions?
+      value: "?"
+    validations:
+      required: false
+  - type: markdown
+    attributes:
+      value: "### Resources"
+  - type: textarea
+    id: articles
+    attributes:
+      label: Articles
+      value: "[]()"
+    validations:
+      required: false
+  - type: textarea
+    id: videos
+    attributes:
+      label: Videos
+      value: "[]()"
+    validations:
+      required: false
+  - type: textarea
+    id: examples
+    attributes:
+      label: Examples
+      value: "[]()"
+    validations:
+      required: false
