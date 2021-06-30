@@ -26,6 +26,8 @@ These are notes of interesting syntax or tips I have noted while using swift; if
   * [Questions](#questions)
     + [Why extend a class to implement a protocol?](#why-extend-a-class-to-implement-a-protocol-)
       - [Answer](#answer)
+    + [Why have ApplicationCoordinator-Bridging-Header?](#why-have-applicationcoordinator-bridging-header-)
+      - [Answer](#answer-1)
 
 ## Syntax
 ### Closures
@@ -283,3 +285,14 @@ I have seen this pattern a lot where there is a protocol then an extension metho
 #### Answer
 This appears to be a pattern called "Protocol Oriented Programming" see [here for further info](https://www.hackingwithswift.com/sixty/9/5/protocol-oriented-programming). 
 This pattern give a deafult implementation for the protocol.
+
+### Why have ApplicationCoordinator-Bridging-Header?
+All this file contains:
+```objc
+@import UIKit;
+```
+
+#### Answer
+If you want to use Objective-C code in your Swift app, then you need to create a bridging header that allows your Swift code to work with your Objective-C code. 
+
+Also, Unlike Objective-C projects (where common imports like UIKit or Foundation can be placed in the Precompiled Header file), in Swift you would normally have to include such imports in every single .swift file. A Bridging-Header file imports UIKit to all files some what like a Precompiled Header file.
