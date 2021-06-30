@@ -27,7 +27,7 @@ body:
     attributes:
       label: Notes
       description: Additional information or questions?
-      value: ""
+      value: "?"
     validations:
       required: false
   - type: markdown
