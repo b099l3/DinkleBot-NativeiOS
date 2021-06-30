@@ -3,7 +3,7 @@ description: File a bug report
 title: "[Bug]: "
 labels: [bug, triage]
 assignees:
-  - octocat
+  - b099l3
 body:
   - type: markdown
     attributes:
@@ -32,20 +32,10 @@ body:
       label: Version
       description: What version of our software are you running?
       options:
-        - 1.0.2 (Default)
-        - 1.0.3 (Edge)
+        - 1.0.0 (MVP)
+        - 0.0.0 ()
     validations:
       required: true
-  - type: dropdown
-    id: browsers
-    attributes:
-      label: What browsers are you seeing the problem on?
-      multiple: true
-      options:
-        - Firefox
-        - Chrome
-        - Safari
-        - Microsoft Edge
   - type: textarea
     id: logs
     attributes:
