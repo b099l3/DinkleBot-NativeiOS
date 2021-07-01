@@ -9,7 +9,7 @@ jobs:
     runs-on: [macos-latest]
     env:
       XC_VERSION: ${{ '12.4' }}
-      XC_PROJECT: ${{ 'Dinklebot.xcodeproj' }}
+      XC_PROJECT: ${{ 'Dinklebot/Dinklebot.xcodeproj' }}
       XC_SCHEME: ${{ 'Dinklebot' }}
     steps:
     - name: Select latest Xcode
