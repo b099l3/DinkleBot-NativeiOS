@@ -2,7 +2,7 @@
 
 set -eo pipefail
 
-xcodebuild -workspace Calculator.xcworkspace \
-            -scheme Calculator\ iOS \
-            -destination platform=iOS\ Simulator,OS=13.3,name=iPhone\ 11 \
+xcodebuild -project DinkleBot/DinkleBot.xcodeproj \
+            -scheme DinkleBot \
+            -destination platform=iOS\ Simulator,OS=14.4,name=iPhone\ 11 \
             clean test | xcpretty
