@@ -12,8 +12,11 @@ jobs:
       XC_PROJECT: ${{ 'Dinklebot/Dinklebot.xcodeproj' }}
       XC_SCHEME: ${{ 'Dinklebot' }}
     steps:
-    - name: Select latest Xcode
+    - name: Select Xcode 12.4
       run: "sudo xcode-select -s /Applications/Xcode_$XC_VERSION.app"
-    - uses: actions/checkout@v2
+    - name: Checkout repository
+      uses: actions/checkout@v2      
+    - name: Testing iOS app
+      run: exec ./.github/scripts/test_app.sh
     - name: Build and Test
-      run: /usr/bin/xcodebuild test -project "$XC_PROJECT" -scheme "$XC_SCHEME" -destination 'platform=iOS Simulator,name=iPhone 11' clean test | xcpretty
+      run: /usr/bin/xcodebuild test -project "$XC_PROJECT" -list
