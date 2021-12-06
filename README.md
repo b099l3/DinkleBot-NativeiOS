@@ -53,6 +53,8 @@ I plan to use this project to learn about modern swift patterns, test out new fr
 - [ ] Integrate with the Bungie.net API
 - [ ] Show the current mods available at Banshee 44 and Ada 1 for today
 - [ ] Show if the current player has these mods
+- [ ] Add a equipment-collect-list so I can keep track of weapon rolls I am trying to get
+- [ ] Add a todo list for non weapon rolls, e.g., "Play tirals to get the Messanger"
 
 ## Why the Name
 Where did the name "Dinklebot" come from initially?
